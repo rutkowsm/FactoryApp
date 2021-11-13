@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CarService {
 
+    private final CarRepository carRepository;
+
+    public CarService(CarRepository carRepository) {
+        this.carRepository = carRepository;
+    }
+
     public void printCar(Car car){
         System.out.println(car);
     }
@@ -20,5 +26,7 @@ public class CarService {
         Car car = new Car(brand, model, wheels, capacity, vin, colour);
         return car;
     }
+
+
 
 }

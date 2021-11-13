@@ -17,14 +17,21 @@ public class CarRestController {
 
     private final CarService carService;
 
-    public CarRestController(CarService carService){
+    public CarRestController(CarService carService, DriverService driverService){
+
         this.carService = carService;
+
+        this.driverService = driverService;
     }
 
     @GetMapping("/build")
     public ResponseEntity<Car> getCar(){
         return ResponseEntity.ok(carService.buildCar("Subaru", "Forester", 4, 800, "VIN: 74826874", "Blue"));
     }
+
+    private final DriverService driverService;
+
+
 
 
 }

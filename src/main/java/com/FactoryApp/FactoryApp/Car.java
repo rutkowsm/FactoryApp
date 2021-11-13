@@ -3,7 +3,6 @@ package com.FactoryApp.FactoryApp;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CAR")
 public class Car {
 
     @Id
@@ -86,7 +85,6 @@ public class Car {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }

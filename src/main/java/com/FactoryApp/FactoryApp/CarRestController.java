@@ -17,6 +17,8 @@ public class CarRestController {
 
     private final CarService carService;
 
+    private final DriverService driverService;
+
     public CarRestController(CarService carService, DriverService driverService){
 
         this.carService = carService;
@@ -29,7 +31,12 @@ public class CarRestController {
         return ResponseEntity.ok(carService.buildCar("Subaru", "Forester", 4, 800, "VIN: 74826874", "Blue"));
     }
 
-    private final DriverService driverService;
+    @GetMapping("/find")
+    public ResponseEntity<Car> findCar(){
+        return ResponseEntity.ok(carService.findById(10L));
+    }
+
+
 
 
 

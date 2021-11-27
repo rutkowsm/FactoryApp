@@ -41,7 +41,7 @@ public class Car {
         this.brand = brand;
     }
 
-    public boolean getModel(String forester) {
+    public String getModel() {
         return model;
     }
 
@@ -88,4 +88,5 @@ public class Car {
     public Long getId() {
         return id;
     }
+
 }

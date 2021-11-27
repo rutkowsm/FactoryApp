@@ -33,7 +33,7 @@ public class CarService {
     }
 
     public void renameModel(Car car){
-        if (car.getModel("Forester")){
+        if (car.getModel() == "Forester"){
             car.setModel("Outback");
         }
     }

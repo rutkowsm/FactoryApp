@@ -24,6 +24,15 @@ public class CarService {
         }
     }
 
+    public void truckWheels(Car car){
+        car.setWheels(18);
+    }
+
+    public void toSiePomaluje(Car car){
+        car.setColour("white");
+    }
+
+
     public Car buildCar(String brand, String model, int wheels, int capacity, String vin, String colour){
         Car car = new Car(brand, model, wheels, capacity, vin, colour);
         return carRepository.save(car);

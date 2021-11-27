@@ -2,6 +2,7 @@ package com.FactoryApp.FactoryApp;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +35,11 @@ public class CarRestController {
     @GetMapping("/find")
     public ResponseEntity<Car> findCar(){
         return ResponseEntity.ok(carService.findById(10L));
+    }
+
+    @GetMapping("/find/{id}")
+    public ResponseEntity<Car> findCar(@PathVariable Long id) {
+        return ResponseEntity.ok(carService.findById(id));
     }
 
 

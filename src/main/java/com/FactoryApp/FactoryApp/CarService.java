@@ -38,6 +38,14 @@ public class CarService {
         }
     }
 
+    public String renameBrand(Car car, String brand){
+        if (car.getModel() != null || car.getModel().isBlank()){
+            car.setBrand(brand);
+        }
+        return car.getBrand();
+    }
+
+
 
     public Car buildCar(String brand, String model, int wheels, int capacity, String vin, String colour){
         Car car = new Car(brand, model, wheels, capacity, vin, colour);

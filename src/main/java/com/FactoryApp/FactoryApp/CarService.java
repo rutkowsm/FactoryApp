@@ -32,6 +32,12 @@ public class CarService {
         car.setColour("white");
     }
 
+    public void renameModel(Car car){
+        if (car.getModel("Forester")){
+            car.setModel("Outback");
+        }
+    }
+
 
     public Car buildCar(String brand, String model, int wheels, int capacity, String vin, String colour){
         Car car = new Car(brand, model, wheels, capacity, vin, colour);

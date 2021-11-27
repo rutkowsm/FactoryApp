@@ -41,7 +41,7 @@ public class Car {
         this.brand = brand;
     }
 
-    public String getModel() {
+    public boolean getModel(String forester) {
         return model;
     }
 

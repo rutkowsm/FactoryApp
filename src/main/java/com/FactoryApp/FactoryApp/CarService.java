@@ -32,14 +32,15 @@ public class CarService {
         car.setColour("white");
     }
 
-    public void renameModel(Car car){
-        if (car.getModel() == "Forester"){
-            car.setModel("Outback");
+    public String renameModel(Car car, String model){
+        if (car.getModel() == null || car.getModel().isBlank()){
+            car.setModel(model);
         }
+        return car.getModel();
     }
 
     public String renameBrand(Car car, String brand){
-        if (car.getModel() != null || car.getModel().isBlank()){
+        if (car.getBrand() == null || car.getBrand().isBlank()){
             car.setBrand(brand);
         }
         return car.getBrand();

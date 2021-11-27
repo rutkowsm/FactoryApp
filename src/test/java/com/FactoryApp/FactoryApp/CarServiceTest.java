@@ -18,5 +18,17 @@ public class CarServiceTest {
         assertThat(car.getWheels()).isEqualTo(5);
     }
 
+    @Test
+    void shouldAddSpareWheel(){
+        //GIVEN
+        Car car = new Car("random brand", "random model", 4, 2000, "123546879", "colorless");
+        //WHEN
+        int wheelsBefore = car.getWheels();
+        carService.addSpareWheel(car);
+        int wheelsAfter = car.getWheels();
+        //THEN
+        assertThat(wheelsAfter == wheelsBefore);
+    }
+
 
 }

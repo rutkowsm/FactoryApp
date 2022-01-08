@@ -10,7 +10,4 @@ public class FactoryAppApplication {
 		SpringApplication.run(FactoryAppApplication.class, args);
 	}
 
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.FactoryApp.FactoryApp;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,15 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class CarRestController {
 
-    @GetMapping
-    public void printHello() {
-        System.out.println("Hello World");
-    }
-
-    @GetMapping
-    public ResponseEntity<Car> printCar() {
-        return ResponseEntity.ok(carService.buildCar("Subaru", "Outback", 4, 500, "BBD56431232", "Black"));
-    }
 
     private final CarService carService;
 
@@ -30,6 +22,16 @@ public class CarRestController {
         this.carService = carService;
 
         this.driverService = driverService;
+    }
+
+    @GetMapping
+    public ResponseEntity<String> printHello() {
+        return ResponseEntity.ok("Hello World");
+    }
+
+    @GetMapping("/show")
+    public ResponseEntity<Car> printCar() {
+        return ResponseEntity.ok(carService.buildCar("Subaru", "Outback", 4, 500, "BBD56431232", "Black"));
     }
 
     @GetMapping("/build")

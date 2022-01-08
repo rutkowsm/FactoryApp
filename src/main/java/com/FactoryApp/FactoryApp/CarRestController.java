@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CarRestController {
 
     @GetMapping
+    public void printHello() {
+        System.out.println("Hello World");
+    }
+
+    @GetMapping
     public ResponseEntity<Car> printCar() {
         return ResponseEntity.ok(carService.buildCar("Subaru", "Outback", 4, 500, "BBD56431232", "Black"));
     }

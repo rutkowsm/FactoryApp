@@ -29,10 +29,6 @@ public class Car {
         this.colour = colour;
     }
 
-    public Car() {
-
-    }
-
     public String getBrand() {
         return brand;
     }

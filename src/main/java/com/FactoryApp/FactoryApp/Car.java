@@ -2,8 +2,13 @@ package com.FactoryApp.FactoryApp;
 
 import javax.persistence.*;
 
+
 @Entity
 public class Car {
+
+    public Car() {
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +32,10 @@ public class Car {
         this.capacity = capacity;
         this.vin = vin;
         this.colour = colour;
+    }
+
+    public Car(Long id) {
+        this.id = id;
     }
 
     public String getBrand() {

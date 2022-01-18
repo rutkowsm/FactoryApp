@@ -42,15 +42,13 @@ public class CarRestController {
     @GetMapping("/find")
     public ResponseEntity<Car> findCar(){
         return ResponseEntity.ok(carService.findById(10L));
+
     }
 
     @GetMapping("/find/{id}")
     public ResponseEntity<Car> findCar(@PathVariable Long id) {
         return ResponseEntity.ok(carService.findById(id));
     }
-
-
-
 
 
 

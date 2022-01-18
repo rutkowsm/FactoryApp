@@ -36,4 +36,13 @@ public class CarRestControllerTest {
                 .andExpect(content().string("{\"id\":1,\"brand\":\"Subaru\",\"model\":\"Outback\",\"wheels\":4,\"capacity\":500,\"vin\":\"BBD56431232\",\"colour\":\"Black\"}"));
     }
 
+    @Test
+    void isCarLocated() throws Exception {
+        mockMvc.perform(get("/cars/find"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("{\"id\":1,\"brand\":\"Subaru\",\"model\":\"Outback\",\"wheels\":4," +
+                        "\"capacity\":500,\"vin\":\"BBD56431232\",\"colour\":\"Black\"}"));
+    }
+
 }
